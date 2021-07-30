@@ -3,7 +3,7 @@ import CONSTANTS from "../../globals/constants"
 import BookmarkIdb from "../../data/bookmark-idb"
 import { useState, useEffect } from 'react'
 
-export default function ListItem({ article }) {
+export default function ListItem({ article, handleBookmarkToggling }) {
 
   const [isBookmarked, setIsBookmarked] = useState(false)
 
@@ -14,6 +14,9 @@ export default function ListItem({ article }) {
     } else {
       await BookmarkIdb.addArticleToBookmark(article)
       setIsBookmarked(true)
+    }
+    if (handleBookmarkToggling) {
+      handleBookmarkToggling()
     }
   }
 

@@ -10,9 +10,9 @@ export default function Layout({ children }) {
         <meta name="description" content="Line Today Clone by Albarra" />
         <link rel="icon" href="/favicon.ico" />
       </Head>
-      <div className="max-w-lg m-auto bg-white">
+      <div className="max-w-lg m-auto bg-white flex flex-col min-h-screen">
         <Header />
-        <main>
+        <main className="flex-1">
           {children}
         </main>
         <Footer />
