@@ -38,9 +38,11 @@ export default function GridItem({ article }) {
       </div>
       <div className="flex mt-1">
         <div className="flex-1">
-          <h3 className="font-bold text-sm line-clamp-3">
-            { article.title }
-          </h3>
+          <a href={article.url?.url} target="_blank" rel="noreferrer noopener">
+            <h3 className="font-bold text-sm line-clamp-3">
+              { article.title }
+            </h3>
+          </a>
           <p className="text-xs">
             { article.publisher }
           </p>

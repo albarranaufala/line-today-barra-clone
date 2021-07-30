@@ -40,9 +40,11 @@ export default function LargeItem({article}) {
       <div className="absolute inset-x-0 bottom-0 h-1/2 bg-gradient-to-t from-black" />
       <div className="absolute inset-x-4 bottom-4 text-white flex">
         <div className="flex-1">
-          <h3 className="font-bold">
-            {article.title}
-          </h3>
+          <a href={article.url.url} target="_blank" rel="noopener noreferrer">
+            <h3 className="font-bold">
+              {article.title}
+            </h3>
+          </a>
           <p className="text-xs">
             {article.publisher}
           </p>

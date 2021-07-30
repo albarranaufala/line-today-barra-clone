@@ -41,9 +41,11 @@ export default function ListItem({ article, handleBookmarkToggling }) {
         />
       </div>
       <div className="flex-1 ml-4">
-        <h3 className="font-bold leading-5 line-clamp-3">
-          {article.title}
-        </h3>
+        <a href={article.url.url} target="_blank" rel="noreferrer noopener">
+          <h3 className="font-bold leading-5 line-clamp-3">
+            {article.title}
+          </h3>
+        </a>
         <p className="text-xs mt-2">
           {article.publisher}
         </p>
