@@ -3,7 +3,7 @@ import { useState } from "react"
 import CONSTANTS from "../../globals/constants"
 
 export default function GridView({ className, title, articles }) {
-  const [isShowAll, setIsShowAll] = useState(false)
+  const [isShowAll, setIsShowAll] = useState(articles.length <= 4)
 
   const showAll = () => {
     setIsShowAll(true)
