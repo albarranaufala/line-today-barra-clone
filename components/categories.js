@@ -16,11 +16,6 @@ export default function Categories({ activeCategoryId, categories }) {
     return element.scrollLeft + element.offsetWidth <= element.offsetWidth
   }
 
-  useEffect(() => {
-    setIsNextButtonShow(!isRightStuck(navRef.current))
-    setIsPrevButtonShow(!isLeftStuck(navRef.current))
-  }, [])
-
   const updateNextPrevButton = element => {
     if (isRightStuck(element)) {
       setIsNextButtonShow(false)
@@ -43,6 +38,11 @@ export default function Categories({ activeCategoryId, categories }) {
     })
     updateNextPrevButton(navElement)
   }
+
+  useEffect(() => {
+    setIsNextButtonShow(!isRightStuck(navRef.current))
+    setIsPrevButtonShow(!isLeftStuck(navRef.current))
+  }, [])
 
   return (
     <div className="relative overflow-x-hidden">
