@@ -1,10 +1,6 @@
 import { useState } from "react"
 import Image from 'next/image'
-import getConfig from 'next/config'
-
-const { publicRuntimeConfig: {
-    imageCDN,
-    emptyImagePlaceholder }} = getConfig()
+import CONSTANTS from "../../globals/constants"
 
 export default function MixView({ className, articles }) {
   const [isShowAll, setIsShowAll] = useState(false)
@@ -22,7 +18,7 @@ export default function MixView({ className, articles }) {
               <li key={article.id} className="relative">
                 <div className="w-full h-56 relative">
                   <Image
-                    src={article.thumbnail ? `${imageCDN}/${article.thumbnail.hash}/w644` : emptyImagePlaceholder}
+                    src={article.thumbnail ? `${CONSTANTS.LINE_IMAGE_CDN}/${article.thumbnail.hash}/w644` : CONSTANTS.IMAGE_PLACEHOLDER}
                     alt={article.title}
                     layout="fill"
                     objectFit="cover"
@@ -51,7 +47,7 @@ export default function MixView({ className, articles }) {
             <li key={article.id} className="flex mt-4">
               <div className="h-24 w-24 relative">
                 <Image
-                  src={article.thumbnail ? `${imageCDN}/${article.thumbnail.hash}/w644` : emptyImagePlaceholder}
+                  src={article.thumbnail ? `${CONSTANTS.LINE_IMAGE_CDN}/${article.thumbnail.hash}/w644` : CONSTANTS.IMAGE_PLACEHOLDER}
                   alt={article.title}
                   layout="fill"
                   objectFit="cover"
@@ -76,7 +72,7 @@ export default function MixView({ className, articles }) {
       </ul>
       {
         !isShowAll ? 
-          <div className="mt-4 flex justify-center">
+          <div className="mt-4 text-center">
             <button className="text-sm" onClick={showAll}>
               Selengkapnya
             </button>
